@@ -14,6 +14,9 @@
 		1483906D2BCC48E500C72FFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1483906B2BCC48E500C72FFE /* LaunchScreen.storyboard */; };
 		148390762BCC4DC700C72FFE /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 148390752BCC4DC700C72FFE /* Realm */; };
 		148390782BCC4DC700C72FFE /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 148390772BCC4DC700C72FFE /* RealmSwift */; };
+		1483907D2BCC4E7A00C72FFE /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1483907C2BCC4E7A00C72FFE /* TaskCell.swift */; };
+		1483907F2BCC4EEF00C72FFE /* ToDoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1483907E2BCC4EEF00C72FFE /* ToDoViewModel.swift */; };
+		148390822BCC587500C72FFE /* TaskObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148390812BCC587500C72FFE /* TaskObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		148390692BCC48E500C72FFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1483906C2BCC48E500C72FFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1483906E2BCC48E500C72FFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1483907C2BCC4E7A00C72FFE /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		1483907E2BCC4EEF00C72FFE /* ToDoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewModel.swift; sourceTree = "<group>"; };
+		148390812BCC587500C72FFE /* TaskObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,14 +64,57 @@
 		1483905F2BCC48E300C72FFE /* RealToDo */ = {
 			isa = PBXGroup;
 			children = (
-				148390602BCC48E300C72FFE /* AppDelegate.swift */,
+				1483907B2BCC4E4700C72FFE /* View */,
+				1483907A2BCC4E3000C72FFE /* ViewModel */,
+				148390792BCC4E2600C72FFE /* Model */,
+				148390802BCC583D00C72FFE /* PersistenceLayer */,
 				148390622BCC48E300C72FFE /* SceneDelegate.swift */,
-				148390642BCC48E300C72FFE /* ToDoViewController.swift */,
+				148390602BCC48E300C72FFE /* AppDelegate.swift */,
 				148390692BCC48E500C72FFE /* Assets.xcassets */,
 				1483906B2BCC48E500C72FFE /* LaunchScreen.storyboard */,
 				1483906E2BCC48E500C72FFE /* Info.plist */,
 			);
 			path = RealToDo;
+			sourceTree = "<group>";
+		};
+		148390792BCC4E2600C72FFE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1483907A2BCC4E3000C72FFE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1483907E2BCC4EEF00C72FFE /* ToDoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1483907B2BCC4E4700C72FFE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				148390642BCC48E300C72FFE /* ToDoViewController.swift */,
+				1483907C2BCC4E7A00C72FFE /* TaskCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		148390802BCC583D00C72FFE /* PersistenceLayer */ = {
+			isa = PBXGroup;
+			children = (
+				148390832BCC5BEB00C72FFE /* PersistenceModels */,
+				148390812BCC587500C72FFE /* TaskObject.swift */,
+			);
+			path = PersistenceLayer;
+			sourceTree = "<group>";
+		};
+		148390832BCC5BEB00C72FFE /* PersistenceModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PersistenceModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,9 +194,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1483907F2BCC4EEF00C72FFE /* ToDoViewModel.swift in Sources */,
 				148390652BCC48E300C72FFE /* ToDoViewController.swift in Sources */,
+				1483907D2BCC4E7A00C72FFE /* TaskCell.swift in Sources */,
 				148390612BCC48E300C72FFE /* AppDelegate.swift in Sources */,
 				148390632BCC48E300C72FFE /* SceneDelegate.swift in Sources */,
+				148390822BCC587500C72FFE /* TaskObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
