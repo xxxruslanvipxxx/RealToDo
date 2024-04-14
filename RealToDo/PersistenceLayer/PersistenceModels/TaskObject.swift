@@ -8,6 +8,8 @@
 import Foundation
 import RealmSwift
 
+//MARK: - TaskObject
+
 final class TaskObject: Object {
     
     @Persisted(primaryKey: true) var id: String
@@ -29,4 +31,17 @@ final class TaskObject: Object {
         self.isCompleted = isCompleted
     }
     
+}
+
+//MARK: - TaskObject init from dto model to persistence model
+
+extension TaskObject {
+    convenience init(dto: TaskDTO) {
+        self.init()
+        self.id = dto.id
+        self.mainText = dto.mainText
+        self.additionalText = dto.additionalText
+        self.date = dto.date
+        self.isCompleted = dto.isCompleted
+    }
 }

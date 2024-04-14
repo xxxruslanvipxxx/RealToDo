@@ -17,6 +17,8 @@
 		1483907D2BCC4E7A00C72FFE /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1483907C2BCC4E7A00C72FFE /* TaskCell.swift */; };
 		1483907F2BCC4EEF00C72FFE /* ToDoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1483907E2BCC4EEF00C72FFE /* ToDoViewModel.swift */; };
 		148390822BCC587500C72FFE /* TaskObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148390812BCC587500C72FFE /* TaskObject.swift */; };
+		148390852BCC5DF700C72FFE /* TaskDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148390842BCC5DF700C72FFE /* TaskDTO.swift */; };
+		148390872BCC611700C72FFE /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148390862BCC611700C72FFE /* StorageService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		1483907C2BCC4E7A00C72FFE /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		1483907E2BCC4EEF00C72FFE /* ToDoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewModel.swift; sourceTree = "<group>"; };
 		148390812BCC587500C72FFE /* TaskObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskObject.swift; sourceTree = "<group>"; };
+		148390842BCC5DF700C72FFE /* TaskDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDTO.swift; sourceTree = "<group>"; };
+		148390862BCC611700C72FFE /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 		148390792BCC4E2600C72FFE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				148390842BCC5DF700C72FFE /* TaskDTO.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -105,7 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				148390832BCC5BEB00C72FFE /* PersistenceModels */,
-				148390812BCC587500C72FFE /* TaskObject.swift */,
+				148390862BCC611700C72FFE /* StorageService.swift */,
 			);
 			path = PersistenceLayer;
 			sourceTree = "<group>";
@@ -113,6 +118,7 @@
 		148390832BCC5BEB00C72FFE /* PersistenceModels */ = {
 			isa = PBXGroup;
 			children = (
+				148390812BCC587500C72FFE /* TaskObject.swift */,
 			);
 			path = PersistenceModels;
 			sourceTree = "<group>";
@@ -199,7 +205,9 @@
 				1483907D2BCC4E7A00C72FFE /* TaskCell.swift in Sources */,
 				148390612BCC48E300C72FFE /* AppDelegate.swift in Sources */,
 				148390632BCC48E300C72FFE /* SceneDelegate.swift in Sources */,
+				148390872BCC611700C72FFE /* StorageService.swift in Sources */,
 				148390822BCC587500C72FFE /* TaskObject.swift in Sources */,
+				148390852BCC5DF700C72FFE /* TaskDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
