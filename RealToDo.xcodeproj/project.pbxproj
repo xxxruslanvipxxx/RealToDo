@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		142979E52BCD989C000686D5 /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142979E42BCD989C000686D5 /* TaskRepository.swift */; };
 		148390612BCC48E300C72FFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148390602BCC48E300C72FFE /* AppDelegate.swift */; };
 		148390632BCC48E300C72FFE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148390622BCC48E300C72FFE /* SceneDelegate.swift */; };
 		148390652BCC48E300C72FFE /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148390642BCC48E300C72FFE /* ToDoViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		142979E42BCD989C000686D5 /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
 		1483905D2BCC48E300C72FFE /* RealToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		148390602BCC48E300C72FFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		148390622BCC48E300C72FFE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				148390842BCC5DF700C72FFE /* TaskDTO.swift */,
+				142979E42BCD989C000686D5 /* TaskRepository.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -109,18 +112,10 @@
 		148390802BCC583D00C72FFE /* PersistenceLayer */ = {
 			isa = PBXGroup;
 			children = (
-				148390832BCC5BEB00C72FFE /* PersistenceModels */,
 				148390862BCC611700C72FFE /* StorageService.swift */,
-			);
-			path = PersistenceLayer;
-			sourceTree = "<group>";
-		};
-		148390832BCC5BEB00C72FFE /* PersistenceModels */ = {
-			isa = PBXGroup;
-			children = (
 				148390812BCC587500C72FFE /* TaskObject.swift */,
 			);
-			path = PersistenceModels;
+			path = PersistenceLayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +201,7 @@
 				148390612BCC48E300C72FFE /* AppDelegate.swift in Sources */,
 				148390632BCC48E300C72FFE /* SceneDelegate.swift in Sources */,
 				148390872BCC611700C72FFE /* StorageService.swift in Sources */,
+				142979E52BCD989C000686D5 /* TaskRepository.swift in Sources */,
 				148390822BCC587500C72FFE /* TaskObject.swift in Sources */,
 				148390852BCC5DF700C72FFE /* TaskDTO.swift in Sources */,
 			);
