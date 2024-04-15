@@ -9,12 +9,51 @@ import Foundation
 import RealmSwift
 
 //MARK: - StorageService
+
 final class StorageService {
     
     private let storage: Realm?
     
+    //MARK: Initializer
+    
     init(configuration: Realm.Configuration = Realm.Configuration(inMemoryIdentifier: "inMemory")) {
         self.storage = try? Realm(configuration: configuration)
     }
+    
+    //MARK: CRUD
+    
+    public func saveOrUpdateObject(object: Object) throws {
+        guard let storage else { return }
+        storage.writeAsync({
+            storage.add(object, update: .all)
+        })
+    }
+    
+    public func saveOrUpdateAllObjects(objects: [Object]) throws {
+        try objects.forEach { try saveOrUpdateObject(object: $0) }
+    }
+    
+    public func delete(object: Object) throws {
+        guard let storage else { return }
+        try storage.write {
+            storage.delete(object)
+        }
+    }
+    
+    public func deleteAll() throws {
+        guard let storage else { return }
+        try storage.write {
+            storage.deleteAll()
+        }
+    }
+    
+    public func fetch<T: Object>(by type: T.Type) -> [T] {
+        guard let storage else { return []}
+        let objects = Array(storage.objects(T.self))
+
+        return objects
+    }
+    
+    
     
 }
