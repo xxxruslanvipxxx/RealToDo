@@ -7,15 +7,22 @@
 
 import Foundation
 
+//MARK: - TaskRepositoryProtocol
+
 protocol TaskRepositoryProtocol {
     func getAllTasks() -> [TaskDTO]
     func saveTasks(_ tasks: [TaskDTO])
     func clearAllTasks()
 }
+//MARK: - TaskRepository
 
 final class TaskRepository: TaskRepositoryProtocol {
     
+    //MARK: StorageService
+    
     var storageService: StorageService
+    
+    //MARK: Initializer
     
     init(storageService: StorageService = StorageService()) {
         self.storageService = storageService

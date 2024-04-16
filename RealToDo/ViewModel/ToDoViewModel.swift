@@ -7,6 +7,16 @@
 
 import Foundation
 
-class ToDoViewModel {
+protocol ToDoViewModelProtocol {
+    
+}
+
+class ToDoViewModel: ToDoViewModelProtocol {
+    
+    private let taskRepository: TaskRepositoryProtocol
+    
+    init(taskRepository: TaskRepositoryProtocol = TaskRepository()) {
+        self.taskRepository = taskRepository
+    }
     
 }
