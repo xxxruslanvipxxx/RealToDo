@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		142979E52BCD989C000686D5 /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142979E42BCD989C000686D5 /* TaskRepository.swift */; };
+		142979E72BCEB8EC000686D5 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142979E62BCEB8EC000686D5 /* Binding.swift */; };
 		148390612BCC48E300C72FFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148390602BCC48E300C72FFE /* AppDelegate.swift */; };
 		148390632BCC48E300C72FFE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148390622BCC48E300C72FFE /* SceneDelegate.swift */; };
 		148390652BCC48E300C72FFE /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148390642BCC48E300C72FFE /* ToDoViewController.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		142979E42BCD989C000686D5 /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
+		142979E62BCEB8EC000686D5 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		1483905D2BCC48E300C72FFE /* RealToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		148390602BCC48E300C72FFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		148390622BCC48E300C72FFE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				1483907E2BCC4EEF00C72FFE /* ToDoViewModel.swift */,
+				142979E62BCEB8EC000686D5 /* Binding.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				142979E52BCD989C000686D5 /* TaskRepository.swift in Sources */,
 				148390822BCC587500C72FFE /* TaskObject.swift in Sources */,
 				148390852BCC5DF700C72FFE /* TaskDTO.swift in Sources */,
+				142979E72BCEB8EC000686D5 /* Binding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
