@@ -47,8 +47,6 @@ extension ToDoViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.taskCell.rawValue, for: indexPath) as? TaskCell {
-            cell.backgroundColor = .green
-            
             return cell
         }
         return UITableViewCell()
@@ -60,6 +58,10 @@ extension ToDoViewController: UITableViewDataSource {
 //MARK: - UITableViewDelegate
 
 extension ToDoViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
     
 }
 

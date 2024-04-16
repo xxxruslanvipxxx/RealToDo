@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		142979E52BCD989C000686D5 /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142979E42BCD989C000686D5 /* TaskRepository.swift */; };
 		142979E72BCEB8EC000686D5 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142979E62BCEB8EC000686D5 /* Binding.swift */; };
+		142979E92BCEE56E000686D5 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142979E82BCEE56E000686D5 /* CheckBox.swift */; };
 		148390612BCC48E300C72FFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148390602BCC48E300C72FFE /* AppDelegate.swift */; };
 		148390632BCC48E300C72FFE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148390622BCC48E300C72FFE /* SceneDelegate.swift */; };
 		148390652BCC48E300C72FFE /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148390642BCC48E300C72FFE /* ToDoViewController.swift */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		142979E42BCD989C000686D5 /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
 		142979E62BCEB8EC000686D5 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
+		142979E82BCEE56E000686D5 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		1483905D2BCC48E300C72FFE /* RealToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		148390602BCC48E300C72FFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		148390622BCC48E300C72FFE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			children = (
 				148390642BCC48E300C72FFE /* ToDoViewController.swift */,
 				1483907C2BCC4E7A00C72FFE /* TaskCell.swift */,
+				142979E82BCEE56E000686D5 /* CheckBox.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				1483907F2BCC4EEF00C72FFE /* ToDoViewModel.swift in Sources */,
 				148390652BCC48E300C72FFE /* ToDoViewController.swift in Sources */,
 				1483907D2BCC4E7A00C72FFE /* TaskCell.swift in Sources */,
+				142979E92BCEE56E000686D5 /* CheckBox.swift in Sources */,
 				148390612BCC48E300C72FFE /* AppDelegate.swift in Sources */,
 				148390632BCC48E300C72FFE /* SceneDelegate.swift in Sources */,
 				148390872BCC611700C72FFE /* StorageService.swift in Sources */,
