@@ -13,7 +13,7 @@ enum CellIdentifier: String {
 }
 
 //MARK: - ToDoViewController
-class ToDoViewController: UIViewController {
+class ListViewController: UIViewController {
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -32,13 +32,14 @@ class ToDoViewController: UIViewController {
         
         setupView()
         setupTableView()
+        setupNavigationBar()
     }
 
     
 
 }
 //MARK: - UITableViewDataSource
-extension ToDoViewController: UITableViewDataSource {
+extension ListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         5
@@ -57,7 +58,7 @@ extension ToDoViewController: UITableViewDataSource {
 
 //MARK: - UITableViewDelegate
 
-extension ToDoViewController: UITableViewDelegate {
+extension ListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
@@ -67,7 +68,7 @@ extension ToDoViewController: UITableViewDelegate {
 
 //MARK: - UI Setup
 
-extension ToDoViewController {
+extension ListViewController {
     
     func setupTableView() {
         view.addSubview(tableView)
@@ -82,6 +83,17 @@ extension ToDoViewController {
     
     func setupView() {
         view.backgroundColor = .white
+    }
+    
+    func setupNavigationBar() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+        
+    }
+    
+    @objc func addTapped() {
+        let newTaskVC = NewTaskViewController()
+        newTaskVC.modalPresentationStyle = .fullScreen
+        show(newTaskVC, sender: nil)
     }
     
 }

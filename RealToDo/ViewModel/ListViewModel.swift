@@ -11,7 +11,7 @@ protocol ToDoViewModelProtocol {
     
 }
 
-class ToDoViewModel: ToDoViewModelProtocol {
+class ListViewModel: ToDoViewModelProtocol {
     
     private let taskRepository: TaskRepositoryProtocol
     
