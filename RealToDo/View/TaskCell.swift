@@ -107,7 +107,7 @@ private extension TaskCell {
         
         contentView.addSubview(checkBox)
         NSLayoutConstraint.activate([checkBox.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-                                     checkBox.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -40),
+                                     checkBox.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -27),
                                      checkBox.heightAnchor.constraint(equalToConstant: 20),
                                      checkBox.widthAnchor.constraint(equalToConstant: 20)])
         
