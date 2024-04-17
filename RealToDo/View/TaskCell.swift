@@ -45,7 +45,6 @@ class TaskCell: UITableViewCell {
         return label
     }()
     
-    //MARK: -
     lazy var checkBox: CheckBox = {
         let checkBox = CheckBox()
         checkBox.translatesAutoresizingMaskIntoConstraints = false
@@ -53,10 +52,10 @@ class TaskCell: UITableViewCell {
         return checkBox
     }()
     
-    //MARK: -
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        self.selectionStyle = .none
         setupView()
         setupGestureRecognizer()
     }
@@ -67,10 +66,19 @@ class TaskCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
+        if selected {
+            UIView.animate(withDuration: 0.2, animations: {
+                self.transform = CGAffineTransform(scaleX: 0.97, y: 0.97)
+            }, completion: { finished in
+                UIView.animate(withDuration: 0.2) {
+                    self.transform = .identity
+                }
+            })
+        }
+        
     }
-
+    
 }
 
 private extension TaskCell {
@@ -93,7 +101,7 @@ private extension TaskCell {
         vStackView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(vStackView)
         
-        NSLayoutConstraint.activate([vStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+        NSLayoutConstraint.activate([vStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
                                      vStackView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
                                      vStackView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 1)])
         

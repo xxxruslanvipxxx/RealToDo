@@ -75,9 +75,9 @@ extension ToDoViewController {
         safeArea = view.layoutMarginsGuide
         
         NSLayoutConstraint.activate([tableView.topAnchor.constraint(equalTo: safeArea.topAnchor),
-                                     tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
-                                     tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-                                     tableView.rightAnchor.constraint(equalTo: view.rightAnchor)])
+                                     tableView.leftAnchor.constraint(equalTo: safeArea.leftAnchor),
+                                     tableView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
+                                     tableView.rightAnchor.constraint(equalTo: safeArea.rightAnchor)])
       }
     
     func setupView() {
