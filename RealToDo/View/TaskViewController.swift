@@ -12,6 +12,8 @@ class TaskViewController: UIViewController {
     var viewModel: TaskViewModelProtocol?
     private var safeArea: UILayoutGuide!
     
+    //MARK: UI variables
+    
     private lazy var mainLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16)
@@ -26,6 +28,9 @@ class TaskViewController: UIViewController {
         textField.borderStyle = .roundedRect
         textField.font = UIFont.systemFont(ofSize: 16)
         textField.placeholder = "MAIN"
+        textField.clearButtonMode = .whileEditing
+        textField.delegate = self
+        textField.addTarget(self, action: #selector(mainTextChanged), for: .editingChanged)
         
         return textField
     }()
@@ -51,21 +56,74 @@ class TaskViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Add Task", for: .normal)
         button.setTitleColor(.systemBlue, for: .normal)
+        button.isEnabled = false
+        button.alpha = 0.5
         button.addTarget(self, action: #selector(saveTapped), for: .touchUpInside)
         
         return button
     }()
     
+    //MARK: Lifecycle methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
+        bindViewModel()
+    }
+    
+    //MARK: Bindings
+    
+    func bindViewModel() {
+        
+        viewModel?.textFieldIsEmpty.bind({ isEmpty in
+            self.setMainTextFieldState(isEmpty: isEmpty)
+        })
+        
+    }
+    
+    private func setMainTextFieldState(isEmpty: Bool) {
+        if isEmpty {
+            self.saveButton.isEnabled = false
+            self.saveButton.alpha = 0.5
+            self.mainTextField.layer.borderColor = UIColor.red.cgColor
+            self.mainTextField.layer.borderWidth = 1
+            self.mainTextField.layer.cornerRadius = 5
+            // set empty textfield placeholder
+            self.mainTextField.attributedPlaceholder = NSAttributedString(
+                string: "This field is required",
+                attributes: [NSAttributedString.Key.foregroundColor: UIColor.red]
+            )
+        } else {
+            self.saveButton.isEnabled = true
+            self.saveButton.alpha = 1
+            self.mainTextField.layer.borderColor = UIColor.black.cgColor
+            self.mainTextField.layer.borderWidth = 0
+        }
+    }
+    
+    //MARK: Objc methods
+    
+    @objc func mainTextChanged() {
+        if let text = mainTextField.text {
+            viewModel?.setTextFieldState(text: text)
+        }
     }
     
     @objc func saveTapped() {
         print("save")
+        
     }
 
+}
+
+//MARK: - UITextFieldDelegate
+
+extension TaskViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
 
 //MARK: - UI Setup
@@ -104,12 +162,12 @@ extension TaskViewController {
         NSLayoutConstraint.activate([textView.topAnchor.constraint(equalTo: textViewLabel.bottomAnchor, constant: 8),
                                      textView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 8),
                                      textView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -8),
-                                     textView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.3)])
+                                     textView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.25)])
         
         saveButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(saveButton)
         
-        NSLayoutConstraint.activate([saveButton.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 16),
+        NSLayoutConstraint.activate([saveButton.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 20),
                                      saveButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                                      saveButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.3)])
         
