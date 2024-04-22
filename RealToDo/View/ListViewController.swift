@@ -15,6 +15,9 @@ enum CellIdentifier: String {
 //MARK: - ToDoViewController
 class ListViewController: UIViewController {
     
+    var viewModel: ListViewModelProtocol?
+    var safeArea: UILayoutGuide!
+    
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .white
@@ -24,8 +27,6 @@ class ListViewController: UIViewController {
         
         return tableView
     }()
-    
-    var safeArea: UILayoutGuide!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,9 +92,7 @@ extension ListViewController {
     }
     
     @objc func addTapped() {
-        let newTaskVC = NewTaskViewController()
-        newTaskVC.modalPresentationStyle = .fullScreen
-        show(newTaskVC, sender: nil)
+        viewModel?.goToNewTaskVC()
     }
     
 }

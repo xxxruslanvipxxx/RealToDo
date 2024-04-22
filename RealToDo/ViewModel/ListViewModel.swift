@@ -7,16 +7,32 @@
 
 import Foundation
 
-protocol ToDoViewModelProtocol {
-    
+protocol ListViewModelProtocol {
+    func fetchTasks() -> [TaskDTO]
+    func saveTasks(tasks: [TaskDTO])
+    func goToNewTaskVC()
 }
 
-class ListViewModel: ToDoViewModelProtocol {
+class ListViewModel: ListViewModelProtocol {
+    
+    private var appCoordinator: AppCoordinator
     
     private let taskRepository: TaskRepositoryProtocol
     
-    init(taskRepository: TaskRepositoryProtocol = TaskRepository()) {
+    init(taskRepository: TaskRepositoryProtocol, appCoordinator: AppCoordinator) {
         self.taskRepository = taskRepository
+        self.appCoordinator = appCoordinator
     }
     
+    func fetchTasks() -> [TaskDTO] {
+        taskRepository.getAllTasks()
+    }
+    
+    func saveTasks(tasks: [TaskDTO]) {
+        taskRepository.saveTasks(tasks)
+    }
+    
+    func goToNewTaskVC() {
+        appCoordinator.goToNewTaskVC()
+    }
 }
