@@ -70,6 +70,7 @@ class TaskViewController: UIViewController {
         
         setupViews()
         bindViewModel()
+        setupDismissKeyboard()
     }
     
     //MARK: Bindings
@@ -123,6 +124,22 @@ extension TaskViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+}
+
+//MARK: - Dismiss keyboard with tap
+
+extension TaskViewController {
+    
+    private func setupDismissKeyboard() {
+        let tapGesture = UITapGestureRecognizer(target: self,
+                                                action: #selector(hideKeyboard))
+        tapGesture.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func hideKeyboard() {
+        self.view.endEditing(true)
     }
 }
 
