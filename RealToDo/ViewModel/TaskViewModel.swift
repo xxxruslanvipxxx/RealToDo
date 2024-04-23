@@ -10,7 +10,7 @@ import Foundation
 protocol TaskViewModelProtocol {
     var textFieldIsEmpty: Dynamic<Bool> {get set}
     func setTextFieldState(text: String)
-    func goToListVC()
+    func goToListVCWith(mainText: String, additionalText: String?)
 }
 
 class TaskViewModel: TaskViewModelProtocol {
@@ -29,7 +29,10 @@ class TaskViewModel: TaskViewModelProtocol {
         }
     }
     
-    func goToListVC() {
-        appCoordinator.goToListVC()
+    func goToListVCWith(mainText: String, additionalText: String?) {
+        
+        appCoordinator.popViewController()
+        
+        // continue here
     }
 }

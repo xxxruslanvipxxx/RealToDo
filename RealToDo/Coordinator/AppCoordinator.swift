@@ -38,4 +38,8 @@ class AppCoordinator: Coordinator {
         navigationController.pushViewController(newTaskVC, animated: true)
     }
     
+    func popViewController() {
+        navigationController.popViewController(animated: true)
+    }
+    
 }

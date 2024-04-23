@@ -112,7 +112,10 @@ class TaskViewController: UIViewController {
     }
     
     @objc func saveTapped() {
-        print("save")
+        guard let mainText = mainTextField.text else { return }
+        let additionalText = textView.text
+        
+        viewModel?.goToListVCWith(mainText: mainText, additionalText: additionalText)
         
     }
 

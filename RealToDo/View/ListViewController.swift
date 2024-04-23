@@ -35,7 +35,12 @@ class ListViewController: UIViewController {
         setupTableView()
         setupNavigationBar()
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("Reload data")
+        tableView.reloadData()
+    }
     
 
 }
