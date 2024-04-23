@@ -115,7 +115,8 @@ class TaskViewController: UIViewController {
         guard let mainText = mainTextField.text else { return }
         let additionalText = textView.text
         
-        viewModel?.goToListVCWith(mainText: mainText, additionalText: additionalText)
+        viewModel?.saveTaskWith(mainText: mainText, additionalText: additionalText)
+        viewModel?.goToListVC()
         
     }
 
