@@ -16,11 +16,14 @@ protocol TaskViewModelProtocol {
 
 class TaskViewModel: TaskViewModelProtocol {
     
-    var appCoordinator: AppCoordinator
     var textFieldIsEmpty: Dynamic<Bool> = Dynamic(false)
     
-    init(appCoordinator: AppCoordinator) {
+    private var appCoordinator: AppCoordinator
+    private let taskRepository: TaskRepositoryProtocol
+    
+    init(appCoordinator: AppCoordinator, taskRepository: TaskRepositoryProtocol) {
         self.appCoordinator = appCoordinator
+        self.taskRepository = taskRepository
     }
     func setTextFieldState(text: String) {
         if text.isEmpty == true {
@@ -35,6 +38,8 @@ class TaskViewModel: TaskViewModelProtocol {
     }
     
     func saveTaskWith(mainText: String, additionalText: String?) {
+        let taskDTO = TaskDTO(id: 0, mainText: mainText, additionalText: additionalText, date: Date(), isCompleted: false)
+        taskRepository.saveTask(taskDTO)
         
     }
 }

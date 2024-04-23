@@ -10,9 +10,9 @@ import Foundation
 //MARK: - TaskDTO
 
 struct TaskDTO {
-    var id: String
+    var id: Int?
     var mainText: String
-    var additionalText: String
+    var additionalText: String?
     var date: Date
     var isCompleted: Bool
 }

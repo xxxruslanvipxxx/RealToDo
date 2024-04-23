@@ -12,15 +12,15 @@ import RealmSwift
 
 final class TaskObject: Object {
     
-    @Persisted(primaryKey: true) var id: String
+    @Persisted(primaryKey: true) var id: Int?
     @Persisted var mainText: String
-    @Persisted var additionalText: String
+    @Persisted var additionalText: String?
     @Persisted var date: Date
     @Persisted var isCompleted: Bool
     
-    convenience init(id: String,
+    convenience init(id: Int,
                      mainText: String,
-                     additionalText: String,
+                     additionalText: String?,
                      date: Date,
                      isCompleted: Bool) {
         self.init()

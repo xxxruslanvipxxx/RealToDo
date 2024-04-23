@@ -15,6 +15,8 @@ class AppCoordinator: Coordinator {
     
     var navigationController: UINavigationController
     
+    var taskRepository = TaskRepository()
+    
     init(navCon: UINavigationController) {
         self.navigationController = navCon
     }
@@ -25,7 +27,6 @@ class AppCoordinator: Coordinator {
     
     func goToListVC() {
         let listVC = ListViewController()
-        let taskRepository = TaskRepository()
         let listVM = ListViewModel(taskRepository: taskRepository, appCoordinator: self)
         listVC.viewModel = listVM
         navigationController.pushViewController(listVC, animated: true)
@@ -33,7 +34,7 @@ class AppCoordinator: Coordinator {
     
     func goToNewTaskVC() {
         let newTaskVC = TaskViewController()
-        let newTaskVM = TaskViewModel(appCoordinator: self)
+        let newTaskVM = TaskViewModel(appCoordinator: self, taskRepository: taskRepository)
         newTaskVC.viewModel = newTaskVM
         navigationController.pushViewController(newTaskVC, animated: true)
     }

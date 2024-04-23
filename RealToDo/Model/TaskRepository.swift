@@ -11,6 +11,7 @@ import Foundation
 
 protocol TaskRepositoryProtocol {
     func getAllTasks() -> [TaskDTO]
+    func saveTask(_ task: TaskDTO)
     func saveTasks(_ tasks: [TaskDTO])
     func clearAllTasks()
 }
@@ -30,6 +31,10 @@ final class TaskRepository: TaskRepositoryProtocol {
     
     func getAllTasks() -> [TaskDTO] {
         storageService.fetch(by: TaskObject.self).map { TaskDTO(object: $0) }
+    }
+    
+    func saveTask(_ task: TaskDTO) {
+        try? storageService.saveOrUpdateObject(object: TaskObject(dto: task))
     }
     
     func saveTasks(_ tasks: [TaskDTO]) {
