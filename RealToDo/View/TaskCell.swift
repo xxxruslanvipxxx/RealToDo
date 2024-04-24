@@ -16,7 +16,6 @@ class TaskCell: UITableViewCell {
         label.numberOfLines = 1
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "First Task"
         
         return label
     }()
@@ -28,7 +27,6 @@ class TaskCell: UITableViewCell {
         label.numberOfLines = 1
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Wash the dish"
         
         return label
     }()
@@ -40,7 +38,6 @@ class TaskCell: UITableViewCell {
         label.numberOfLines = 1
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "12.04.2024"
         
         return label
     }()
