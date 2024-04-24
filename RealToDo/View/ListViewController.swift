@@ -17,7 +17,6 @@ class ListViewController: UIViewController {
     
     var viewModel: ListViewModelProtocol?
     var safeArea: UILayoutGuide!
-    var tasks: [TaskDTO]?
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -39,29 +38,29 @@ class ListViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        getTasks()
+        reloadTasksFromDB()
         tableView.reloadData()
     }
     
-    private func getTasks() {
-        let tasks = viewModel?.fetchTasks()
-        self.tasks = tasks
+    private func reloadTasksFromDB() {
+        viewModel?.reloadTasks()
     }
     
 
 }
+
 //MARK: - UITableViewDataSource
 
 extension ListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel?.getTaskCount() ?? 0
+        viewModel?.tasks?.count ?? 0
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.taskCell.rawValue, for: indexPath) as? TaskCell {
-            guard let task = tasks?[indexPath.row] else { return cell }
+            guard let task = self.viewModel?.tasks?[indexPath.row] else { return cell }
             
             cell.mainLabel.text = task.mainText
             cell.additionalLabel.text = task.additionalText ?? ""
