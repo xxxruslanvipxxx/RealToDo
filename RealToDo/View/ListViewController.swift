@@ -17,6 +17,7 @@ class ListViewController: UIViewController {
     
     var viewModel: ListViewModelProtocol?
     var safeArea: UILayoutGuide!
+    var tasks: [TaskDTO]?
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -38,8 +39,13 @@ class ListViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("Reload data")
+        getTasks()
         tableView.reloadData()
+    }
+    
+    private func getTasks() {
+        let tasks = viewModel?.fetchTasks()
+        self.tasks = tasks
     }
     
 
@@ -49,12 +55,22 @@ class ListViewController: UIViewController {
 extension ListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel?.fetchTasks().count ?? 0
+        viewModel?.getTaskCount() ?? 0
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.taskCell.rawValue, for: indexPath) as? TaskCell {
+            guard let task = tasks?[indexPath.row] else { return cell }
+            
+            cell.mainLabel.text = task.mainText
+            cell.additionalLabel.text = task.additionalText ?? ""
+            cell.checkBox.isChecked = task.isCompleted
+            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "d.MM.y"
+            cell.dateLabel.text = formatter.string(from: task.date)
+            
             return cell
         }
         return UITableViewCell()

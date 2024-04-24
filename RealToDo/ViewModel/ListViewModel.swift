@@ -10,6 +10,7 @@ import Foundation
 protocol ListViewModelProtocol {
     func fetchTasks() -> [TaskDTO]
     func saveTasks(tasks: [TaskDTO])
+    func getTaskCount() -> Int
     func goToNewTaskVC()
 }
 
@@ -30,6 +31,10 @@ class ListViewModel: ListViewModelProtocol {
     
     func saveTasks(tasks: [TaskDTO]) {
         taskRepository.saveTasks(tasks)
+    }
+    
+    func getTaskCount() -> Int {
+        fetchTasks().count
     }
     
     func goToNewTaskVC() {
