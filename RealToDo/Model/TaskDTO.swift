@@ -10,11 +10,11 @@ import Foundation
 //MARK: - TaskDTO
 
 struct TaskDTO {
-    var id: Int?
+    var id: String = UUID().uuidString
     var mainText: String
     var additionalText: String?
-    var date: Date
-    var isCompleted: Bool
+    var date: Date = Date()
+    var isCompleted: Bool = false
 }
 
 //MARK: - TaskDTO init from persistence to dto model

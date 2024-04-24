@@ -38,7 +38,7 @@ class TaskViewModel: TaskViewModelProtocol {
     }
     
     func saveTaskWith(mainText: String, additionalText: String?) {
-        let taskDTO = TaskDTO(id: 0, mainText: mainText, additionalText: additionalText, date: Date(), isCompleted: false)
+        let taskDTO = TaskDTO(mainText: mainText, additionalText: additionalText)
         taskRepository.saveTask(taskDTO)
         
     }
