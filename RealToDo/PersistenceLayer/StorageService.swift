@@ -16,8 +16,9 @@ final class StorageService {
     
     //MARK: Initializer
     
-    init(configuration: Realm.Configuration = Realm.Configuration(inMemoryIdentifier: "inMemory")) {
+    init(configuration: Realm.Configuration = Realm.Configuration.defaultConfiguration) {
         self.storage = try? Realm(configuration: configuration)
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
     
     //MARK: CRUD
