@@ -34,8 +34,9 @@ final class StorageService {
         try objects.forEach { try saveOrUpdateObject(object: $0) }
     }
     
-    public func delete(object: Object) throws {
+    public func delete(for primaryKey: String) throws {
         guard let storage else { return }
+        guard let object = storage.object(ofType: TaskObject.self, forPrimaryKey: primaryKey ) else { return }
         try storage.write {
             storage.delete(object)
         }

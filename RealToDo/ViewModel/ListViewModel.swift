@@ -10,11 +10,11 @@ import Foundation
 protocol ListViewModelProtocol {
     var tasks: [TaskDTO]? {get set}
     func reloadTasks()
-    func saveTasks(tasks: [TaskDTO])
+    func deleteTask(_ index: Int)
     func goToNewTaskVC()
 }
 
-class ListViewModel: ListViewModelProtocol {   // Refactor this mess
+class ListViewModel: ListViewModelProtocol {
     
     private var appCoordinator: AppCoordinator
     private let taskRepository: TaskRepositoryProtocol
@@ -35,10 +35,12 @@ class ListViewModel: ListViewModelProtocol {   // Refactor this mess
         self.tasks = fetchTasks()
     }
     
-    func saveTasks(tasks: [TaskDTO]) {
-        taskRepository.saveTasks(tasks)
+    func deleteTask(_ index: Int) {
+        guard let deletedTask = self.tasks?.remove(at: index) else { return }
+        let key = deletedTask.id
+        taskRepository.deleteTask(primaryKey: key)
     }
-        
+    
     func goToNewTaskVC() {
         appCoordinator.goToNewTaskVC()
     }

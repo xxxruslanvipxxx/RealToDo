@@ -13,6 +13,7 @@ protocol TaskRepositoryProtocol {
     func getAllTasks() -> [TaskDTO]
     func saveTask(_ task: TaskDTO)
     func saveTasks(_ tasks: [TaskDTO])
+    func deleteTask(primaryKey: String)
     func clearAllTasks()
 }
 //MARK: - TaskRepository
@@ -39,6 +40,10 @@ final class TaskRepository: TaskRepositoryProtocol {
     
     func saveTasks(_ tasks: [TaskDTO]) {
         try? storageService.saveOrUpdateAllObjects(objects: tasks.map { TaskObject(dto: $0) })
+    }
+    
+    func deleteTask(primaryKey: String) {
+        try? storageService.delete(for: primaryKey)
     }
     
     func clearAllTasks() {
