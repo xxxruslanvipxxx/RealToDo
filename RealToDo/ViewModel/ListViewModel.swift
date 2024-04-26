@@ -12,6 +12,7 @@ protocol ListViewModelProtocol {
     func reloadTasks()
     func deleteTask(_ index: Int)
     func goToNewTaskVC()
+    func goToEditTaskVC(task: TaskDTO)
 }
 
 class ListViewModel: ListViewModelProtocol {
@@ -44,4 +45,9 @@ class ListViewModel: ListViewModelProtocol {
     func goToNewTaskVC() {
         appCoordinator.goToNewTaskVC()
     }
+    
+    func goToEditTaskVC(task: TaskDTO) {
+        appCoordinator.goToEditTaskVC(task: task)
+    }
+    
 }

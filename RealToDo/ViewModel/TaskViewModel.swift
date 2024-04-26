@@ -9,6 +9,7 @@ import Foundation
 
 protocol TaskViewModelProtocol {
     var textFieldIsEmpty: Dynamic<Bool> {get set}
+    var task: TaskDTO? {get set}
     func setTextFieldState(text: String)
     func goToListVC()
     func saveTaskWith(mainText: String, additionalText: String?)
@@ -16,6 +17,7 @@ protocol TaskViewModelProtocol {
 
 class TaskViewModel: TaskViewModelProtocol {
     
+    var task: TaskDTO?
     var textFieldIsEmpty: Dynamic<Bool> = Dynamic(false)
     
     private var appCoordinator: AppCoordinator
@@ -25,6 +27,7 @@ class TaskViewModel: TaskViewModelProtocol {
         self.appCoordinator = appCoordinator
         self.taskRepository = taskRepository
     }
+    
     func setTextFieldState(text: String) {
         if text.isEmpty == true {
             textFieldIsEmpty.value = true
@@ -38,8 +41,14 @@ class TaskViewModel: TaskViewModelProtocol {
     }
     
     func saveTaskWith(mainText: String, additionalText: String?) {
-        let taskDTO = TaskDTO(mainText: mainText, additionalText: additionalText)
-        taskRepository.saveTask(taskDTO)
+        if task != nil {
+            task?.mainText = mainText
+            task?.additionalText = additionalText
+            taskRepository.saveTask(task ?? TaskDTO(mainText: mainText, additionalText: additionalText))
+        } else {
+            let taskDTO = TaskDTO(mainText: mainText, additionalText: additionalText)
+            taskRepository.saveTask(taskDTO)
+        }
         
     }
 }

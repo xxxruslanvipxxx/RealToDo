@@ -71,6 +71,7 @@ class TaskViewController: UIViewController {
         setupViews()
         bindViewModel()
         setupDismissKeyboard()
+        fillTheFields()
     }
     
     //MARK: Bindings
@@ -101,6 +102,14 @@ class TaskViewController: UIViewController {
             self.mainTextField.layer.borderColor = UIColor.black.cgColor
             self.mainTextField.layer.borderWidth = 0
         }
+    }
+    
+    private func fillTheFields() {
+        guard let mainText = viewModel?.task?.mainText else { return }
+        guard let additionalText = viewModel?.task?.additionalText else { return }
+        
+        mainTextField.text = mainText
+        textView.text = additionalText
     }
     
     //MARK: Objc methods

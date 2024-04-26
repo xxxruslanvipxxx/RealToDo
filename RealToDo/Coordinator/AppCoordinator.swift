@@ -39,6 +39,14 @@ class AppCoordinator: Coordinator {
         navigationController.pushViewController(newTaskVC, animated: true)
     }
     
+    func goToEditTaskVC(task: TaskDTO) {
+        let editTaskVC = TaskViewController()
+        let editTaskVM = TaskViewModel(appCoordinator: self, taskRepository: taskRepository)
+        editTaskVC.viewModel = editTaskVM
+        editTaskVM.task = task
+        navigationController.pushViewController(editTaskVC, animated: true)
+    }
+    
     func popViewController() {
         navigationController.popViewController(animated: true)
     }

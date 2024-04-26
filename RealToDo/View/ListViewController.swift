@@ -93,6 +93,11 @@ extension ListViewController: UITableViewDelegate {
         return 50
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let task = viewModel?.tasks?[indexPath.row] else { return }
+        viewModel?.goToEditTaskVC(task: task)
+    }
+    
 }
 
 //MARK: - UI Setup
