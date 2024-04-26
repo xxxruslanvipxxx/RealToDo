@@ -86,7 +86,7 @@ private extension TaskCell {
         hStackView.axis = .horizontal
         hStackView.spacing = 8
         hStackView.alignment = .leading
-        hStackView.distribution = .fillProportionally
+        hStackView.distribution = .fill
         hStackView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(hStackView)
         
@@ -97,12 +97,13 @@ private extension TaskCell {
         vStackView.distribution = .fillEqually
         vStackView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(vStackView)
+        contentView.addSubview(checkBox)
         
         NSLayoutConstraint.activate([vStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
                                      vStackView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-                                     vStackView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 1)])
+                                     vStackView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 1),
+                                     vStackView.trailingAnchor.constraint(equalTo: checkBox.leadingAnchor, constant: -27)])
         
-        contentView.addSubview(checkBox)
         NSLayoutConstraint.activate([checkBox.centerYAnchor.constraint(equalTo: self.centerYAnchor),
                                      checkBox.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -27),
                                      checkBox.heightAnchor.constraint(equalToConstant: 20),
