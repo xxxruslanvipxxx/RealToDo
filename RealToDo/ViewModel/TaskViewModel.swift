@@ -10,7 +10,9 @@ import Foundation
 protocol TaskViewModelProtocol {
     var textFieldIsEmpty: Dynamic<Bool> {get set}
     var task: TaskDTO? {get set}
+    var buttonIsEnabled: Dynamic<Bool>? {get set}
     func setTextFieldState(text: String)
+    func setButtonState()
     func goToListVC()
     func saveTaskWith(mainText: String, additionalText: String?)
 }
@@ -19,6 +21,7 @@ class TaskViewModel: TaskViewModelProtocol {
     
     var task: TaskDTO?
     var textFieldIsEmpty: Dynamic<Bool> = Dynamic(false)
+    var buttonIsEnabled: Dynamic<Bool>?
     
     private var appCoordinator: AppCoordinator
     private let taskRepository: TaskRepositoryProtocol
@@ -33,6 +36,14 @@ class TaskViewModel: TaskViewModelProtocol {
             textFieldIsEmpty.value = true
         } else {
             textFieldIsEmpty.value = false
+        }
+    }
+    
+    func setButtonState() {
+        if task != nil {
+            buttonIsEnabled?.value = false
+        } else {
+            buttonIsEnabled?.value = true
         }
     }
     

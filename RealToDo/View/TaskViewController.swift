@@ -56,8 +56,8 @@ class TaskViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Add Task", for: .normal)
         button.setTitleColor(.systemBlue, for: .normal)
-        button.isEnabled = false
-        button.alpha = 0.5
+        button.isEnabled = true
+        button.alpha = 1
         button.addTarget(self, action: #selector(saveTapped), for: .touchUpInside)
         
         return button
@@ -72,6 +72,7 @@ class TaskViewController: UIViewController {
         bindViewModel()
         setupDismissKeyboard()
         fillTheFields()
+        viewModel?.setButtonState()
     }
     
     //MARK: Bindings
@@ -80,14 +81,17 @@ class TaskViewController: UIViewController {
         
         viewModel?.textFieldIsEmpty.bind({ isEmpty in
             self.setMainTextFieldState(isEmpty: isEmpty)
+            self.setButtonState(isEnabled: !isEmpty)
         })
+        viewModel?.buttonIsEnabled?.bind({ isEnabled in
+            self.setButtonState(isEnabled: isEnabled)
+        })
+    
         
     }
     
-    private func setMainTextFieldState(isEmpty: Bool) {
+    private func setMainTextFieldState(isEmpty: Bool) { // bug with disabled button
         if isEmpty {
-            self.saveButton.isEnabled = false
-            self.saveButton.alpha = 0.5
             self.mainTextField.layer.borderColor = UIColor.red.cgColor
             self.mainTextField.layer.borderWidth = 1
             self.mainTextField.layer.cornerRadius = 5
@@ -97,10 +101,18 @@ class TaskViewController: UIViewController {
                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.red]
             )
         } else {
-            self.saveButton.isEnabled = true
-            self.saveButton.alpha = 1
             self.mainTextField.layer.borderColor = UIColor.black.cgColor
             self.mainTextField.layer.borderWidth = 0
+        }
+    }
+    
+    private func setButtonState(isEnabled: Bool) {
+        if isEnabled {
+            self.saveButton.isEnabled = true
+            self.saveButton.alpha = 1
+        } else {
+            self.saveButton.isEnabled = false
+            self.saveButton.alpha = 0.5
         }
     }
     
@@ -130,6 +142,8 @@ class TaskViewController: UIViewController {
     }
 
 }
+
+//MARK: - UITextViewDelegate
 
 //MARK: - UITextFieldDelegate
 
