@@ -11,6 +11,7 @@ protocol ListViewModelProtocol {
     var tasks: [TaskDTO]? {get set}
     func reloadTasks()
     func deleteTask(_ index: Int)
+    func saveOrUpdateTask(task: TaskDTO)
     func goToNewTaskVC()
     func goToEditTaskVC(task: TaskDTO)
 }
@@ -40,6 +41,11 @@ class ListViewModel: ListViewModelProtocol {
         guard let deletedTask = self.tasks?.remove(at: index) else { return }
         let key = deletedTask.id
         taskRepository.deleteTask(primaryKey: key)
+    }
+    
+    func saveOrUpdateTask(task: TaskDTO) {
+        taskRepository.saveTask(task)
+        reloadTasks()
     }
     
     func goToNewTaskVC() {

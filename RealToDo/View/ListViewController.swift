@@ -65,6 +65,11 @@ extension ListViewController: UITableViewDataSource {
             cell.mainLabel.text = task.mainText
             cell.additionalLabel.text = task.additionalText ?? ""
             cell.checkBox.isChecked = task.isCompleted
+            cell.checkBox.isCheckedChanged = { [weak self] in
+                var task = task
+                task.isCompleted = cell.checkBox.isChecked
+                self?.viewModel?.saveOrUpdateTask(task: task)
+            }
             
             let formatter = DateFormatter()
             formatter.dateFormat = "d.MM.y"

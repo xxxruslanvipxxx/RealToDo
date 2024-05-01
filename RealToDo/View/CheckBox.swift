@@ -9,7 +9,14 @@ import UIKit
 
 class CheckBox: UIView {
 
-    var isChecked: Bool = false
+    var isCheckedChanged: (() -> ())?
+    
+    var isChecked: Bool = false {
+        didSet {
+            updateCheckBoxState()
+        }
+    }
+    
     let checkBox = UIImageView()
     
     override init(frame: CGRect) {
@@ -23,13 +30,18 @@ class CheckBox: UIView {
     
     public func toggle() {
         self.isChecked = !isChecked
-            
+        if let action = isCheckedChanged {
+            action()
+        }
+        
+    }
+    
+    private func updateCheckBoxState() {
         if isChecked {
             checkBox.image = UIImage(systemName: "checkmark.circle.fill")
         } else {
             checkBox.image = UIImage(systemName: "circle")
         }
-        
     }
     
     private func createSubviews() {

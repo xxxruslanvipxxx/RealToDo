@@ -21,7 +21,7 @@ class TaskViewModel: TaskViewModelProtocol {
     
     var task: TaskDTO?
     var textFieldIsEmpty: Dynamic<Bool> = Dynamic(false)
-    var buttonIsEnabled: Dynamic<Bool>?
+    var buttonIsEnabled: Dynamic<Bool>? = Dynamic(false)
     
     private var appCoordinator: AppCoordinator
     private let taskRepository: TaskRepositoryProtocol
@@ -40,7 +40,7 @@ class TaskViewModel: TaskViewModelProtocol {
     }
     
     func setButtonState() {
-        if task != nil {
+        if task == nil {
             buttonIsEnabled?.value = false
         } else {
             buttonIsEnabled?.value = true
