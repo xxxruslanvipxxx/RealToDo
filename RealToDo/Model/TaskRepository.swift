@@ -31,7 +31,9 @@ final class TaskRepository: TaskRepositoryProtocol {
     }
     
     func getAllTasks() -> [TaskDTO] {
-        storageService.fetch(by: TaskObject.self).map { TaskDTO(object: $0) }
+        storageService.fetch(by: TaskObject.self)
+            .sorted(by: { $0.date.timeIntervalSince1970 > $1.date.timeIntervalSince1970 })
+            .map { TaskDTO(object: $0) }
     }
     
     func saveTask(_ task: TaskDTO) {
