@@ -19,7 +19,6 @@
 		148390652BCC48E300C72FFE /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148390642BCC48E300C72FFE /* ListViewController.swift */; };
 		1483906A2BCC48E500C72FFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 148390692BCC48E500C72FFE /* Assets.xcassets */; };
 		1483906D2BCC48E500C72FFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1483906B2BCC48E500C72FFE /* LaunchScreen.storyboard */; };
-		148390762BCC4DC700C72FFE /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 148390752BCC4DC700C72FFE /* Realm */; };
 		148390782BCC4DC700C72FFE /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 148390772BCC4DC700C72FFE /* RealmSwift */; };
 		1483907D2BCC4E7A00C72FFE /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1483907C2BCC4E7A00C72FFE /* TaskCell.swift */; };
 		1483907F2BCC4EEF00C72FFE /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1483907E2BCC4EEF00C72FFE /* ListViewModel.swift */; };
@@ -56,7 +55,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				148390782BCC4DC700C72FFE /* RealmSwift in Frameworks */,
-				148390762BCC4DC700C72FFE /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,7 +159,6 @@
 			);
 			name = RealToDo;
 			packageProductDependencies = (
-				148390752BCC4DC700C72FFE /* Realm */,
 				148390772BCC4DC700C72FFE /* RealmSwift */,
 			);
 			productName = RealToDo;
@@ -460,11 +457,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		148390752BCC4DC700C72FFE /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 148390742BCC4DC700C72FFE /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
 		148390772BCC4DC700C72FFE /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 148390742BCC4DC700C72FFE /* XCRemoteSwiftPackageReference "realm-swift" */;
