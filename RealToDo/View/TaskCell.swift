@@ -101,9 +101,22 @@ private extension TaskCell {
         checkBox.checkBox.isUserInteractionEnabled = true
         checkBox.addGestureRecognizer(gesture)
     }
-    
+
     @objc func tapCheckbox() {
-        checkBox.toggle()
+        
+        UIView.animateKeyframes(withDuration: 0.2, delay: 0, options: .calculationModeLinear, animations: {
+            
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.5) {
+                self.checkBox.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+            }
+            UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5) {
+                self.checkBox.transform = .identity
+            }
+            
+        }) { _ in
+            self.checkBox.toggle()
+        }
+         
     }
     
 }

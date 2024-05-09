@@ -103,6 +103,18 @@ extension ListViewController: UITableViewDelegate {
         viewModel?.goToEditTaskVC(task: task)
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        let transform = CATransform3DTranslate(CATransform3DIdentity, 0, 10, 0)
+        cell.layer.transform = transform
+        cell.alpha = 0
+        
+        UIView.animate(withDuration: 0.5) {
+            cell.layer.transform = CATransform3DIdentity
+            cell.alpha = 1
+            
+        }
+    }
 }
 
 //MARK: - UI Setup
