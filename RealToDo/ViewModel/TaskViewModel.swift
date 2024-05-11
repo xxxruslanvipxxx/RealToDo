@@ -32,11 +32,7 @@ class TaskViewModel: TaskViewModelProtocol {
     }
     
     func setTextFieldState(text: String) {
-        if text.isEmpty == true {
-            textFieldIsEmpty.value = true
-        } else {
-            textFieldIsEmpty.value = false
-        }
+        textFieldIsEmpty.value = text.isEmpty
     }
     
     func setButtonState() {
