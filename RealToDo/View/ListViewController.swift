@@ -24,6 +24,7 @@ class ListViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(TaskCell.self, forCellReuseIdentifier: CellIdentifier.taskCell.rawValue)
+        tableView.accessibilityIdentifier = "ListTableView"
         
         return tableView
     }()
@@ -65,6 +66,7 @@ extension ListViewController: UITableViewDataSource {
             cell.mainLabel.text = task.mainText
             cell.additionalLabel.text = task.additionalText ?? ""
             cell.checkBox.isChecked = task.isCompleted
+            cell.accessibilityIdentifier = "cell_\(indexPath.row)"
             cell.checkBox.isCheckedChanged = { [weak self] in
                 var task = task
                 task.isCompleted = cell.checkBox.isChecked
@@ -137,7 +139,9 @@ extension ListViewController {
     }
     
     func setupNavigationBar() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+        let barButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+        barButtonItem.accessibilityIdentifier = "Add"
+        navigationItem.rightBarButtonItem = barButtonItem
         
     }
     

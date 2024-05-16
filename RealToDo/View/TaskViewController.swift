@@ -27,10 +27,10 @@ class TaskViewController: UIViewController {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
         textField.font = UIFont.systemFont(ofSize: 16)
-        textField.placeholder = "MAIN"
         textField.clearButtonMode = .whileEditing
         textField.delegate = self
         textField.addTarget(self, action: #selector(mainTextChanged), for: .editingChanged)
+        textField.accessibilityIdentifier = "MainTextField"
         
         return textField
     }()
@@ -48,6 +48,7 @@ class TaskViewController: UIViewController {
         let textView = UITextView()
         textView.font = UIFont.systemFont(ofSize: 16)
         textView.backgroundColor = UIColor(white: 0.9, alpha: 0.8)
+        textView.accessibilityIdentifier = "AdditionalTextView"
         
         return textView
     }()
@@ -58,6 +59,7 @@ class TaskViewController: UIViewController {
         button.setTitleColor(.systemBlue, for: .normal)
         button.isEnabled = true
         button.alpha = 1
+        button.accessibilityIdentifier = "SaveButton"
         button.addTarget(self, action: #selector(saveTapped), for: .touchUpInside)
         
         return button

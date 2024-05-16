@@ -25,7 +25,53 @@
 		148390822BCC587500C72FFE /* TaskObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148390812BCC587500C72FFE /* TaskObject.swift */; };
 		148390852BCC5DF700C72FFE /* TaskDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148390842BCC5DF700C72FFE /* TaskDTO.swift */; };
 		148390872BCC611700C72FFE /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148390862BCC611700C72FFE /* StorageService.swift */; };
+		14C287A72BED4DCF00C67F28 /* RealToDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C287A62BED4DCF00C67F28 /* RealToDoTests.swift */; };
+		14C287B42BF5276000C67F28 /* RealToDoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C287B32BF5276000C67F28 /* RealToDoUITests.swift */; };
+		14C287B62BF5276000C67F28 /* RealToDoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C287B52BF5276000C67F28 /* RealToDoUITestsLaunchTests.swift */; };
+		14F441372BF52C56008490E5 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 14F441362BF52C56008490E5 /* Realm */; };
+		14F441382BF52C56008490E5 /* Realm in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 14F441362BF52C56008490E5 /* Realm */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		14C287A82BED4DCF00C67F28 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 148390552BCC48E300C72FFE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1483905C2BCC48E300C72FFE;
+			remoteInfo = RealToDo;
+		};
+		14C287B72BF5276000C67F28 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 148390552BCC48E300C72FFE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1483905C2BCC48E300C72FFE;
+			remoteInfo = RealToDo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		14C287BF2BF52A7000C67F28 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				14F441382BF52C56008490E5 /* Realm in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14F441312BF52BF1008490E5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		142979E42BCD989C000686D5 /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
@@ -47,6 +93,11 @@
 		148390812BCC587500C72FFE /* TaskObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskObject.swift; sourceTree = "<group>"; };
 		148390842BCC5DF700C72FFE /* TaskDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDTO.swift; sourceTree = "<group>"; };
 		148390862BCC611700C72FFE /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		14C287A42BED4DCE00C67F28 /* RealToDoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RealToDoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		14C287A62BED4DCF00C67F28 /* RealToDoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealToDoTests.swift; sourceTree = "<group>"; };
+		14C287B12BF5276000C67F28 /* RealToDoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RealToDoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		14C287B32BF5276000C67F28 /* RealToDoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealToDoUITests.swift; sourceTree = "<group>"; };
+		14C287B52BF5276000C67F28 /* RealToDoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealToDoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +106,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				148390782BCC4DC700C72FFE /* RealmSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14C287A12BED4DCE00C67F28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14C287AE2BF5276000C67F28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14F441372BF52C56008490E5 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,7 +140,10 @@
 			isa = PBXGroup;
 			children = (
 				1483905F2BCC48E300C72FFE /* RealToDo */,
+				14C287A52BED4DCF00C67F28 /* RealToDoTests */,
+				14C287B22BF5276000C67F28 /* RealToDoUITests */,
 				1483905E2BCC48E300C72FFE /* Products */,
+				14C287BC2BF52A7000C67F28 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				1483905D2BCC48E300C72FFE /* RealToDo.app */,
+				14C287A42BED4DCE00C67F28 /* RealToDoTests.xctest */,
+				14C287B12BF5276000C67F28 /* RealToDoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -142,6 +213,30 @@
 			path = PersistenceLayer;
 			sourceTree = "<group>";
 		};
+		14C287A52BED4DCF00C67F28 /* RealToDoTests */ = {
+			isa = PBXGroup;
+			children = (
+				14C287A62BED4DCF00C67F28 /* RealToDoTests.swift */,
+			);
+			path = RealToDoTests;
+			sourceTree = "<group>";
+		};
+		14C287B22BF5276000C67F28 /* RealToDoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				14C287B32BF5276000C67F28 /* RealToDoUITests.swift */,
+				14C287B52BF5276000C67F28 /* RealToDoUITestsLaunchTests.swift */,
+			);
+			path = RealToDoUITests;
+			sourceTree = "<group>";
+		};
+		14C287BC2BF52A7000C67F28 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -165,6 +260,49 @@
 			productReference = 1483905D2BCC48E300C72FFE /* RealToDo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		14C287A32BED4DCE00C67F28 /* RealToDoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14C287AC2BED4DCF00C67F28 /* Build configuration list for PBXNativeTarget "RealToDoTests" */;
+			buildPhases = (
+				14C287A02BED4DCE00C67F28 /* Sources */,
+				14C287A12BED4DCE00C67F28 /* Frameworks */,
+				14C287A22BED4DCE00C67F28 /* Resources */,
+				14F441312BF52BF1008490E5 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				14C287A92BED4DCF00C67F28 /* PBXTargetDependency */,
+			);
+			name = RealToDoTests;
+			packageProductDependencies = (
+			);
+			productName = RealToDoTests;
+			productReference = 14C287A42BED4DCE00C67F28 /* RealToDoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		14C287B02BF5276000C67F28 /* RealToDoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14C287B92BF5276000C67F28 /* Build configuration list for PBXNativeTarget "RealToDoUITests" */;
+			buildPhases = (
+				14C287AD2BF5276000C67F28 /* Sources */,
+				14C287AE2BF5276000C67F28 /* Frameworks */,
+				14C287AF2BF5276000C67F28 /* Resources */,
+				14C287BF2BF52A7000C67F28 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				14C287B82BF5276000C67F28 /* PBXTargetDependency */,
+			);
+			name = RealToDoUITests;
+			packageProductDependencies = (
+				14F441362BF52C56008490E5 /* Realm */,
+			);
+			productName = RealToDoUITests;
+			productReference = 14C287B12BF5276000C67F28 /* RealToDoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -172,11 +310,19 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1510;
+				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1510;
 				TargetAttributes = {
 					1483905C2BCC48E300C72FFE = {
 						CreatedOnToolsVersion = 15.1;
+					};
+					14C287A32BED4DCE00C67F28 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 1483905C2BCC48E300C72FFE;
+					};
+					14C287B02BF5276000C67F28 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 1483905C2BCC48E300C72FFE;
 					};
 				};
 			};
@@ -197,6 +343,8 @@
 			projectRoot = "";
 			targets = (
 				1483905C2BCC48E300C72FFE /* RealToDo */,
+				14C287A32BED4DCE00C67F28 /* RealToDoTests */,
+				14C287B02BF5276000C67F28 /* RealToDoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -208,6 +356,20 @@
 			files = (
 				1483906D2BCC48E500C72FFE /* LaunchScreen.storyboard in Resources */,
 				1483906A2BCC48E500C72FFE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14C287A22BED4DCE00C67F28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14C287AF2BF5276000C67F28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,7 +398,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		14C287A02BED4DCE00C67F28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14C287A72BED4DCF00C67F28 /* RealToDoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14C287AD2BF5276000C67F28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14C287B62BF5276000C67F28 /* RealToDoUITestsLaunchTests.swift in Sources */,
+				14C287B42BF5276000C67F28 /* RealToDoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		14C287A92BED4DCF00C67F28 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1483905C2BCC48E300C72FFE /* RealToDo */;
+			targetProxy = 14C287A82BED4DCF00C67F28 /* PBXContainerItemProxy */;
+		};
+		14C287B82BF5276000C67F28 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1483905C2BCC48E300C72FFE /* RealToDo */;
+			targetProxy = 14C287B72BF5276000C67F28 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1483906B2BCC48E500C72FFE /* LaunchScreen.storyboard */ = {
@@ -381,8 +573,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -407,8 +599,9 @@
 				INFOPLIST_FILE = RealToDo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -419,6 +612,76 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		14C287AA2BED4DCF00C67F28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = rusl.RealToDoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RealToDo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RealToDo";
+			};
+			name = Debug;
+		};
+		14C287AB2BED4DCF00C67F28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = rusl.RealToDoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RealToDo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RealToDo";
+			};
+			name = Release;
+		};
+		14C287BA2BF5276000C67F28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = rusl.RealToDoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RealToDo;
+			};
+			name = Debug;
+		};
+		14C287BB2BF5276000C67F28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = rusl.RealToDoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RealToDo;
 			};
 			name = Release;
 		};
@@ -443,6 +706,24 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		14C287AC2BED4DCF00C67F28 /* Build configuration list for PBXNativeTarget "RealToDoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14C287AA2BED4DCF00C67F28 /* Debug */,
+				14C287AB2BED4DCF00C67F28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14C287B92BF5276000C67F28 /* Build configuration list for PBXNativeTarget "RealToDoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14C287BA2BF5276000C67F28 /* Debug */,
+				14C287BB2BF5276000C67F28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -461,6 +742,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 148390742BCC4DC700C72FFE /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		14F441362BF52C56008490E5 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 148390742BCC4DC700C72FFE /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

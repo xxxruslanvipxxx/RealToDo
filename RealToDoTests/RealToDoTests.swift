@@ -6,29 +6,49 @@
 //
 
 import XCTest
+@testable import RealToDo
 
 final class RealToDoTests: XCTestCase {
 
+    var taskVM: TaskViewModel!
+    var navController: UINavigationController!
+    var appCoordinator: AppCoordinator!
+    var taskRepository: TaskRepositoryProtocol!
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        try super.setUpWithError()
+        navController = UINavigationController()
+        appCoordinator = AppCoordinator(navCon: navController)
+        taskRepository = TaskRepository()
+        taskVM = TaskViewModel(appCoordinator: appCoordinator, taskRepository: taskRepository)
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        navController = nil
+        appCoordinator = nil
+        taskRepository = nil
+        taskVM = nil
+        try super.tearDownWithError()
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testTaskVMCorrectWithEmptyStateTextFieldState() throws {
+        // Given
+        let textFieldText = ""
+        let expectedResult = true
+        var validateResult: Bool
+        // When
+        taskVM.setTextFieldState(text: textFieldText)
+        validateResult = taskVM.textFieldIsEmpty.value
+        // Then
+        XCTAssertEqual(expectedResult, validateResult)
     }
 
     func testPerformanceExample() throws {
-        // This is an example of a performance test case.
+        let textFieldText = ""
         measure {
-            // Put the code you want to measure the time of here.
+            taskVM.setTextFieldState(text: textFieldText)
         }
     }
 

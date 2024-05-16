@@ -16,6 +16,7 @@ class TaskCell: UITableViewCell {
         label.numberOfLines = 1
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityIdentifier = "mainLabel"
         
         return label
     }()
@@ -27,6 +28,7 @@ class TaskCell: UITableViewCell {
         label.numberOfLines = 1
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityIdentifier = "additionalLabel"
         
         return label
     }()
